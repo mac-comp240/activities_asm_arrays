@@ -17,8 +17,7 @@ int sum_p(int *arr_ptr) {
 	printf("The pointer values (memory addresses) \nfor each element of array are:\n");
 	// for loop using pointer addition goes here
 	for (i = 0; i < N; i++) {
-		//  you compute the sum by adding one line here
-		
+		//  TODO: you compute the sum by adding one line here
 		
 		next = next + 1;       // increment pointer goes to next element
 		printf("%p ", next);
@@ -27,21 +26,7 @@ int sum_p(int *arr_ptr) {
     
     return sum;
 }
-int sum_p_no_printf(int *arr_ptr) {
-	int sum = 0;
-    int i;
-	int * next = arr_ptr;  // points to zeroth element
-	
-	// for loop using pointer addition goes here
-	for (i = 0; i < N; i++) {
-		//  you compute the sum by adding one line here
-		
-		
-		next = next + 1;       // increment pointer goes to next element
-	}
-    
-    return sum;
-}
+
 
 /*
  * Computes and returns the sum of the elements in the array A.
@@ -51,20 +36,23 @@ int sum_index(int *A) {
     int sum = 0;
     int i;
     
-	// for loop using indexing goes here
+	// TODO: write the for loop to sum up the elements of A
 	
     
     return sum;
 }
 
 int main() {
-    ///  We will dynamically allocate on heap instead      int A[N];    // array of length N
-    //
+    // To declare A statically, uncomment the line below and comment out the 
+    // two lines in the next section (and the "free" line below)
+    //int A[N];    // array of length N
+
+    // To declare A dynamically, uncomment the two lines below and comment out
+    // the line above (also uncomment the "free" line below)
     int * A;    // set the pointer to the beginning (only a single pointer now)
-	
 	A = (int *) malloc(N * sizeof(int));  // creates contiguous array of ints in the heap
     
-    // fill with dummy data values, using indexing
+    // fill A with dummy data values, using indexing
     for (int i = 0; i<N; i++) {
         A[i] = i;
     }
@@ -82,5 +70,6 @@ int main() {
     arraySum = sum_index(A);
     assert(arraySum == 45);
     
+    free(A);
     return 0;
 }

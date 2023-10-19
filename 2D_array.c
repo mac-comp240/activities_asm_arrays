@@ -1,7 +1,5 @@
 /*
     ASM Activity
-    Libby Shoop
-
 */
 #include <stdio.h>
 
@@ -38,8 +36,8 @@ void set_diag_p(Marray_t A) {
 
     int * nextElement = Arow;
     for (i = 0; i < M; i++) {   // complete this part: i is each row
-		// find pointer to next diagonal element using i and N
-        // update the value pointed to by that element
+		// TODO: find pointer to next diagonal element using i and N
+        // TODO: update the value pointed to by that element
  
     }
     // debug
